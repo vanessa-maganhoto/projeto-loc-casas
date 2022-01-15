@@ -14,10 +14,14 @@ h1{
   color: #E5E5E5;
 }
 html, body {
-    background-color: #E5E5E5;
+  background-color: #E5E5E5;
 }
 
-a, a:hover {
+a{
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: none;
   color: unset;
 }
