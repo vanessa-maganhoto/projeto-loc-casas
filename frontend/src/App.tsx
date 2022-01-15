@@ -4,8 +4,8 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Listing from './paginas/listing';
-import Form from './paginas/form';
+import Listing from './paginas/indexListing';
+import Form from './paginas/indexForm';
 import Navbar from "./componentes/Navbar/navbar";
 
 
