@@ -1,1 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
+:root {
+  --color-primary: #EB006D;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poiret One', cursive;
+}
+
+h1{
+  background-color: var(--color-primary);
+  color: #E5E5E5;
+}
+html, body {
+    background-color: #E5E5E5;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: unset;
+}
