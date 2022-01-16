@@ -8,7 +8,7 @@ export default function Navbar(){
         <nav className="container">
             <div className="loc-nav-content">
                 <h1>Loc Casas</h1>
-                <a href="https://github.com/vanessa-maganhoto" target="_blank" >
+                <a href="https://github.com/vanessa-maganhoto"  >
                     <div className="loc-contact-container">
                         <GithubIcon/>
                         <p className="loc-contact-link">/vanessa-maganhoto</p>
