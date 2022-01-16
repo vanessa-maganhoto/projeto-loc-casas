@@ -29,4 +29,5 @@ public class ImovelService {
 		ImovelDTO dto = new ImovelDTO(result);
 		return dto;
 	}
+	
 }
