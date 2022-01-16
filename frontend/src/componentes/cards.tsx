@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom';
 import Score from '../componentes/score'
 
 export default function Cards() {
@@ -9,15 +10,18 @@ export default function Cards() {
         count: 2,
         score: 4.5
     };
-    
-    
+
+
     return (
         <div>
             <img className="loc-movie-card-image" src={imovel.imagem} alt={imovel.titulo} />
             <div className="loc-card-bottom-container">
                 <h3>{imovel.titulo}</h3>
                 <Score />
-                <div className="btn btn-primary loc-btn">Avaliar</div>
+
+                <Link to={`/form/${imovel.id}`}>
+                    <div className="btn btn-primary loc-btn">Avaliar</div>
+                </Link>
             </div>
         </div>
     )

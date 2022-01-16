@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom';
 import './form.css'
 export default function Form() {
 
@@ -35,7 +36,10 @@ export default function Form() {
                         <button type="submit" className="btn btn-primary loc-btn">Salvar</button>
                     </div>
                 </form >
-                <button className="btn btn-primary loc-btn mt-3">Cancelar</button>
+                <Link to="/">
+                    <button className="btn btn-primary loc-btn mt-3">Cancelar</button>
+
+                </Link>
             </div >
         </div >
     )
