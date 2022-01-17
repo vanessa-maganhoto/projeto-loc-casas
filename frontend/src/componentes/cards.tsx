@@ -1,22 +1,21 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom';
 import Score from '../componentes/score'
+import { Imovel } from '../types/imovel';
 
-export default function Cards() {
-    const imovel = {
-        id: 1,
-        imagem: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
-        titulo: "The Witcher",
-        count: 2,
-        score: 4.5
-    };
+type Props = {
+    imovel:Imovel
+}
+
+export default function Cards( { imovel } : Props) {
+    
 
 
     return (
         <div>
-            <img className="loc-movie-card-image" src={imovel.imagem} alt={imovel.titulo} />
+            <img className="loc-movie-card-image" src={imovel.image} alt={imovel.title} />
             <div className="loc-card-bottom-container">
-                <h3>{imovel.titulo}</h3>
+                <h3>{imovel.title}</h3>
                 <Score />
 
                 <Link to={`/form/${imovel.id}`}>

@@ -10,42 +10,49 @@ import { ImovelPage } from '../types/imovel'
 
 export default function Listing() {
 
-    const [pageNumber, setPageNumber] =React.useState(0)
-    
-    React.useEffect(()=>{
+    const [pageNumber, setPageNumber] = React.useState(0)
 
-        axios.get(`${BASE_URL}/imovel?size=12&page=1`)
+    const [page, setPage] = React.useState<ImovelPage>(
+        {
+            content: [],
+            last: true,
+            totalPages: 0,
+            totalElements: 0,
+            size: 12,
+            number: 0,
+            first: true,
+            numberOfElements: 0,
+            empty: true
+        }
+    )
+
+    React.useEffect(() => {
+
+        axios.get(`${BASE_URL}/imovel?size=12&page=${pageNumber}&sort=title`)
             .then(response => {
                 const data = response.data as ImovelPage
-                console.log(data)
-                setPageNumber(data.number)
-                
+                setPage(data)
+
             })
-    }, [])
-    
-    
+    }, [pageNumber])
+
+
+
 
     return (
         <>
-        <p>{pageNumber}</p>
             <Paginacao />
             <div className='container'>
                 <div className='row'>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-                        < Cards />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-                        < Cards />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-                        < Cards />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-                        < Cards />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
-                        < Cards />
-                    </div>
+
+                    {page.content.map(imovel => (
+
+                        <div key={imovel.id} className='col-sm-6 col-lg-4 col-xl-3 mb-3'>
+                            < Cards imovel={imovel} />
+                        </div>
+                    )
+                    )}
+
                 </div>
             </div>
 
