@@ -3,17 +3,31 @@ import Paginacao from '../componentes/paginacao'
 import Cards from '../componentes/cards'
 import axios from 'axios'
 import { BASE_URL } from '../utils/requests'
+import { ImovelPage } from '../types/imovel'
 
-// FORMA ERRADA
-axios.get(`${BASE_URL}/imovel?size=12&page=0`)
-    .then(response =>{
-        console.log(response.data)
-    })
+
 
 
 export default function Listing() {
+
+    const [pageNumber, setPageNumber] =React.useState(0)
+    
+    React.useEffect(()=>{
+
+        axios.get(`${BASE_URL}/imovel?size=12&page=1`)
+            .then(response => {
+                const data = response.data as ImovelPage
+                console.log(data)
+                setPageNumber(data.number)
+                
+            })
+    }, [])
+    
+    
+
     return (
         <>
+        <p>{pageNumber}</p>
             <Paginacao />
             <div className='container'>
                 <div className='row'>
