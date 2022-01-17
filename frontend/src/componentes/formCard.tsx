@@ -38,12 +38,13 @@ export default function FormCard( { imovelId } : Props){
             url: '/scores',
             data: {
                 email: email,
-                imovel: imovelId,
+                imovelId: imovelId,
                 score: score
             }
         }
 
         axios(config).then(response => {
+            console.log(response.data)
             navigate("/")
         })
 
