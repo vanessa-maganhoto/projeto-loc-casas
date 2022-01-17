@@ -28,7 +28,7 @@ export default function Listing() {
 
     React.useEffect(() => {
 
-        axios.get(`${BASE_URL}/imovel?size=12&page=${pageNumber}&sort=title`)
+        axios.get(`${BASE_URL}/imovel?size=12&page=${pageNumber}`)
             .then(response => {
                 const data = response.data as ImovelPage
                 setPage(data)
@@ -36,14 +36,14 @@ export default function Listing() {
             })
     }, [pageNumber])
 
-   /*  const handlePageChange = (newPageNumber : number) => {
+    const handlePageChange = (newPageNumber : number) => {
         setPageNumber(newPageNumber);
-    } */
+    } 
 
 
     return (
         <>
-            <Paginacao />
+            <Paginacao page={page} onChange={handlePageChange}/>
             <div className='container'>
                 <div className='row'>
 

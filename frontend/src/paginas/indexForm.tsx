@@ -8,8 +8,8 @@ export default function Form(){
     const params = useParams()
 
     return (
-        <FormCard imovelId = "5"/>
+        <FormCard imovelId = {`${params.imovelId}`}/>
     )
 }
 
-//{`${params.imovelId}`}
+//
