@@ -16,7 +16,7 @@ export default function Cards( { imovel } : Props) {
             <img className="loc-movie-card-image" src={imovel.image} alt={imovel.title} />
             <div className="loc-card-bottom-container">
                 <h3>{imovel.title}</h3>
-                <Score />
+                <Score count = {imovel.count} score={imovel.score}/>
 
                 <Link to={`/form/${imovel.id}`}>
                     <div className="btn btn-primary loc-btn">Avaliar</div>

@@ -1,17 +1,22 @@
 import * as React from 'react'
 import '../componentes/scoreStyles.css'
-import AvalicaoEstrela from '../componentes/avaliacaoEstrelas.jsx'
+import AvalicaoEstrela from '../componentes/avaliacaoEstrelas'
 
-export default function Score() {
+type Props = {
+    score: number
+    count: number
+}
+
+
+export default function Score({score, count} : Props) {
     
-    const score = 3.5
-    const count = 13
+    
     
     return (
 
         <div className="loc-score-container">
             <p className="loc-score-value">{score > 0 ? score.toFixed(1) : '-'}</p>
-            <AvalicaoEstrela />
+            <AvalicaoEstrela  score = {score}/>
             <p className="loc-score-count">{count} avaliações</p>
         </div>
     )

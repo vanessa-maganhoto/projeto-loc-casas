@@ -9,7 +9,7 @@ import { ImovelPage } from '../types/imovel'
 
 
 export default function Listing() {
-
+    // eslint-disable-next-line
     const [pageNumber, setPageNumber] = React.useState(0)
 
     const [page, setPage] = React.useState<ImovelPage>(
@@ -36,7 +36,9 @@ export default function Listing() {
             })
     }, [pageNumber])
 
-
+   /*  const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    } */
 
 
     return (
